@@ -1,0 +1,63 @@
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+ <form role="form" >
+  <div class="form-group">
+    <label for="name">Image Link</label>
+    <input #image_link type="text" class="form-control">
+  </div>
+   <button type="submit" class="btn btn-default" (click)="identify_face(image_link.value)" >Submit</button>
+ </form>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+   <div *ngIf="to_identify" class="ccol-md-6 col-md-offset-3 compare-faces">
+    <div class="col-xs-6 col-md-3">
+    <a class="thumbnail">
+      <img [src]="to_identify" alt="...">
+    </a>
+      Identify
+  </div>
+
+  <div *ngIf="identified_person" class="col-xs-6 col-md-3">
+    <a class="thumbnail">
+      <img [src]="identified_person.image_link" alt="...">
+    </a>
+      {{identified_person.name }} <br />
+      {{identified_person.confidence}}
+    </div>
+   </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+<div class="row">
+  <div *ngFor="let person of persons" class="col-xs-6 col-md-3 faces">
+    <a [routerLink] = "['/person', person.personid]" class="thumbnail">
+      <img [src]="person.image_link" alt="...">
+    </a>
+      <div class="person-name">{{person.name}}</div>
+  </div>
+</div>
+</div>
+
+
+<div class="new-person">
+<form role="form" >
+   <div class="col-md-6 col-md-offset-3">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input #name type="text" class="form-control">
+  </div>
+   <div class="form-group">
+    <label for="userData">User Data</label>
+    <input #user_data type="text" class="form-control" placeholder="userData">
+     <button type="submit" class="btn btn-default" (click)="new_person(name.value, user_data.value)" >Submit</button>
+  </div>
+ </div>
+ </form>
+</div>
+

@@ -1,0 +1,10 @@
+.faces {
+   width: 250px;
+   height: 250px;
+   overflow: hidden; 
+}
+
+.faces img {
+    width: auto;
+    height: 200px;
+}

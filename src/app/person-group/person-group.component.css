@@ -1,0 +1,24 @@
+.compare-faces {
+    background: red;
+    padding: 25px 0 25px 0;
+}
+
+.faces {
+   width: 250px;
+   height: 250px;
+   overflow: hidden; 
+}
+
+.faces img {
+    width: auto;
+    height: 200px;
+}
+
+.person-name {
+    position: relative;
+    bottom: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding-left: 10px;
+    font-size: 1.5em;
+}
